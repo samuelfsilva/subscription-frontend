@@ -1,0 +1,17 @@
+button {
+    position: relative;
+    width: 247px;
+    height: 40px;
+    margin-top: 18px;
+    border: none;
+    font-size: 18px;
+    
+    color: #FFF;
+    background: #BF0002;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background: #ee090d;
+}

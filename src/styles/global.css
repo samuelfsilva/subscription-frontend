@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #FFF;
+    background: #000;
+}
+
+body, input, button {
+    font: 500 24px Roboto, sans-serif;
+}

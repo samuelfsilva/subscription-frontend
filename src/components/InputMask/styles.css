@@ -1,0 +1,28 @@
+.input-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-block + .input-block {
+    margin-top: 18px;
+}
+
+.input-block input {
+    position: relative;
+    width: 247px;
+    height: 36px;
+    font-size: 18px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 0px;
+    padding-left: 15px;
+}
+
+.input-block span {
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: 2px;
+    color: #FFFFFF;
+}

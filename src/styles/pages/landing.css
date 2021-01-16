@@ -1,0 +1,51 @@
+#page-landing {
+    width: 100vw;
+    height: 100vh;
+    background: #6F0101;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#page-landing img {
+    width: 98px;
+    height: 98px;
+    margin-top: 80px;
+}
+
+#page-landing h1 {
+    font-family: Kaushan Script;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 70px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    margin-bottom: 51px;
+}
+
+#subscription-form {
+    width: 247px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0px;
+}
+
+@media (min-width: 1000px) {
+    #page-landing {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #page-landing img {
+        margin-top: 0px;
+    }
+}
