@@ -1,0 +1,47 @@
+#page-main {
+    width: 100vw;
+    height: 100vh;
+    background: #6F0101;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#page-main img {
+    width: 190px;
+    height: 190px;
+    margin-top: 80px;
+}
+
+#page-main h1 {
+    font-family: Kaushan Script;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 70px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    margin-bottom: 51px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0px;
+}
+
+@media (min-width: 1000px) {
+    #page-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #page-main img {
+        margin-top: 0px;
+    }
+}

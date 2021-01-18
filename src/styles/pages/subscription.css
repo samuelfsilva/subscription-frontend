@@ -1,4 +1,4 @@
-#page-landing {
+#page-subscription {
     width: 100vw;
     height: 100vh;
     background: #6F0101;
@@ -8,13 +8,13 @@
     flex-direction: column;
 }
 
-#page-landing img {
+#page-subscription img {
     width: 98px;
     height: 98px;
     margin-top: 80px;
 }
 
-#page-landing h1 {
+#page-subscription h1 {
     font-family: Kaushan Script;
     font-size: 48px;
     font-style: normal;
@@ -38,14 +38,14 @@
 }
 
 @media (min-width: 1000px) {
-    #page-landing {
+    #page-subscription {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
 
-    #page-landing img {
+    #page-subscription img {
         margin-top: 0px;
     }
 }
