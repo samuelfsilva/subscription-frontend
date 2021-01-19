@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { SubmitHandler, FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
@@ -104,7 +105,9 @@ function Subscription() {
 
   return (
     <div id="page-subscription">
-      <img src={logoImg} alt="Fantasy"/>
+      <Link to="/">
+        <img src={logoImg} alt="Fantasy"/>
+      </Link>
       <h1>Fantasy</h1>
       <Form id="subscription-form" ref={formRef} onSubmit={handleSubmit}>
         <Input name="name" placeholder="Seu primeiro nome*" />
