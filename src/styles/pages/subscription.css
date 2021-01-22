@@ -5,10 +5,11 @@
     
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
-#page-subscription img {
+#page-subscription .logo {
     width: 98px;
     height: 98px;
     margin-top: 80px;
@@ -35,6 +36,42 @@
     justify-content: center;
     align-items: center;
     bottom: 0px;
+}
+
+.form-message {
+    opacity: 0;
+    margin-top: 20px;
+    width: 344px;
+    height: 60px;
+
+    background: #FFFFFF;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.inscricao-enviada {
+    animation: fade 6s;
+}
+
+.form-message > img {
+    width: 22.22px;
+    height: 16px;
+}
+
+.form-message > span {
+    color: #416D2A;
+    font-size: 16px;
+}
+
+@keyframes fade {
+    0%,
+    100% {
+        opacity: 0;
+    } 50% {
+        opacity: 1;
+    }
 }
 
 @media (min-width: 1000px) {

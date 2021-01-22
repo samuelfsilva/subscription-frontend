@@ -7,32 +7,36 @@ import '../styles/global.css';
 import '../styles/pages/main.css';
 
 import logoImg from '../images/logo.svg';
+import instagram from '../images/instagram.svg';
 
 function Main() {
   const history = useHistory();
 
   return (
-    <div id="page-main">
-      <img src={logoImg} alt="Fantasy"/>
-      <h1>Fantasy</h1>
-      <main>
-        <h2>Conheça o Fantasy!</h2>
-        Lorem Ipsum is simply dummy text of the printing and 
-        typesetting industry. Lorem Ipsum has been the industry's 
-        standard dummy text ever since the 1500s, when an unknown 
-        printer took a galley of type and scrambled it to make a 
-        type specimen book. It has survived not only five centuries, 
-        but also the leap into electronic typesetting, remaining essentially 
-        unchanged. It was popularised in the 1960s with the release of 
-        Letraset sheets containing Lorem Ipsum passages, and more recently 
-        with desktop publishing software like Aldus PageMaker including 
-        versions of Lorem Ipsum.
-      </main>
-      <Button 
-        name="enviar" 
-        label="Inscreva-se" 
-        type="button" 
-        onClick={() => history.push('subscription')} />
+    <div className="page-main">
+      <div className="main">
+        <img className="logo" src={logoImg} alt="YouFantasy"/>
+        <h1>YouFantasy</h1>
+        <main>
+          <h2>Conheça o YouFantasy!</h2>
+          <section>
+            YouFantasy é lugar ideal para o público adulto. Se você é solteiro, solteira ou casal, 
+            precisa conhecer o YouFantasy. Aqui você conhecerá tudo que existe de mais excitante 
+            no mundo erótico. Conheça de tudo, eventos, festas e produtos do tema adulto e sinta-se à 
+            vontade para explorar seus mais profundos desejos.
+          </section>
+        </main>
+        <Button 
+          name="enviar" 
+          label="Inscreva-se" 
+          type="button" 
+          onClick={() => history.push('subscription')} />
+      </div>
+      <div className="social-media">
+        <a href="http://instagram.com/youfantasy_site" target="_blank" rel="noreferrer">
+          <img src={instagram} alt="Instagram"/>
+        </a>
+      </div>
     </div>
   );
 }

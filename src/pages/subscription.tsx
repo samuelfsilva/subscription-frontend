@@ -11,6 +11,7 @@ import '../styles/global.css';
 import '../styles/pages/subscription.css';
 
 import logoImg from '../images/logo.svg';
+import formConfirma from '../images/form-confirma.svg';
 
 import Input from '../components/Input';
 import InputMask from '../components/InputMask';
@@ -22,14 +23,60 @@ interface FormData {
   nascimento?: Date;
 }
 
-// const initialData = {
-//   nascimento: (new Date().getDay().toString().padStart(2, '0') + '/' + 
-//     (new Date().getMonth() + 1).toString().padStart(2, '0') + '/' + 
-//     new Date().getFullYear())
-// }
+type errorType = {
+  [key: string] : string
+}
 
-function Subscription() {
+function Subscription(): JSX.Element {
   const formRef = useRef<FormHandles>(null);
+
+  const exibeMensagemSucesso = () => {
+    const incluiMensagem = document.querySelector("div.form-message");
+    const removeMensagem = document.getElementById("mensagem");
+
+    incluiMensagem?.classList.add('inscricao-enviada');
+
+    removeMensagem?.addEventListener("animationend", event => {
+      if (event.animationName === "fade") {
+        removeMensagem?.classList.remove('inscricao-enviada');
+      }
+    });
+  }
+
+  const transformType = (value: any, originalValue: any) => {
+    const parsedDate = isDate(originalValue)
+        ? originalValue
+        : parse(originalValue, "dd/MM/yyyy", new Date());
+    
+    return parsedDate;
+  }
+
+  const testType = (nascimento?:Date) => {
+    const cutoff = new Date();
+    let data = new Date();
+    
+    cutoff.setFullYear(cutoff.getFullYear() - 18);
+    
+    if (nascimento)
+    data = nascimento;
+    
+    return data <= cutoff;
+  }
+
+  var errorMessages: errorType = {};
+
+  const preencheListaErro = (err: Yup.ValidationError, errorMessages: errorType) => {
+    if (err.path) {
+      if (err.path === "nascimento") {
+        if (err.type === "typeError") {
+          errorMessages[err.path] = "Informe uma data válida"
+          return;
+        }
+      }
+
+      errorMessages[err.path] = err.message;
+    }
+  }
 
   const handleSubmit: SubmitHandler<FormData> = async data => {
     try {
@@ -40,28 +87,10 @@ function Subscription() {
           .required('O e-mail é obrigatório'),
         nascimento: Yup
           .date()
-          .transform((value, originalValue) => {
-            const parsedDate = isDate(originalValue)
-                ? originalValue
-                : parse(originalValue, "dd/MM/yyyy", new Date());
-            
-            return parsedDate;
-        })
-          .test("nascimento", "Você deve ser maior de 18 anos", function(nascimento) {
-            const cutoff = new Date();
-            let data = new Date();
-            
-            cutoff.setFullYear(cutoff.getFullYear() - 18);
-            
-            if (nascimento)
-            data = nascimento;
-            
-            return data <= cutoff;
-          })
+          .transform(transformType)
+          .test("nascimento", "Você deve ser maior de 18 anos", testType)
           .required('Informe a sua data de nascimento'),
       });
-
-      console.log(data);
 
       await schema.validate(data, {
         abortEarly: false,
@@ -69,36 +98,25 @@ function Subscription() {
 
       await api.post('subscribe', data);
 
-      alert('Inscrição realizada com sucesso!');
+      /* Dados gravados com sucesso */
+
+      exibeMensagemSucesso();
+
+      /* Limpa formulário e críticas */
 
       if (formRef.current) {
         formRef.current.setErrors({});
         formRef.current.reset();
       }
     } catch (error) {
-      console.log({error});
+      /* Erro na validação de campos do formulário */
+
       if (error instanceof Yup.ValidationError) {
-        type errorType = {
-          [key: string] : string
-        }
+        errorMessages = {};
+        
+        error.inner.forEach(err => {preencheListaErro(err, errorMessages)});
 
-        const errorMessages: errorType = {};
-
-        error.inner.forEach(err => {
-          if (err.path) {
-            if (err.path === "nascimento") {
-              if (err.type === "typeError") {
-                errorMessages[err.path] = "Informe uma data válida"
-                return;
-              }
-            }
-
-            errorMessages[err.path] = err.message;
-          }
-        });
-
-        if (formRef.current)
-          formRef.current.setErrors(errorMessages);
+        formRef.current?.setErrors(errorMessages);
       }
     }
   }
@@ -106,7 +124,7 @@ function Subscription() {
   return (
     <div id="page-subscription">
       <Link to="/">
-        <img src={logoImg} alt="Fantasy"/>
+        <img className="logo" src={logoImg} alt="Fantasy"/>
       </Link>
       <h1>Fantasy</h1>
       <Form id="subscription-form" ref={formRef} onSubmit={handleSubmit}>
@@ -118,6 +136,10 @@ function Subscription() {
           placeholder="Sua data de nascimento*" />
         <Button name="enviar" label="Inscreva-se" type="submit" />
       </Form>
+      <div id="mensagem" className="form-message">
+        <img src={formConfirma} alt="Confirmado" />
+        <span>Inscrição realizada com sucesso.</span>
+      </div>
     </div>
   );
 }
