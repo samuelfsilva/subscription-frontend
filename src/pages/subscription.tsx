@@ -43,7 +43,7 @@ function Subscription(): JSX.Element {
     });
   }
 
-  const transformType = (value: any, originalValue: any) => {
+  const transformData = (value: any, originalValue: any) => {
     const parsedDate = isDate(originalValue)
         ? originalValue
         : parse(originalValue, "dd/MM/yyyy", new Date());
@@ -51,7 +51,7 @@ function Subscription(): JSX.Element {
     return parsedDate;
   }
 
-  const testType = (nascimento?:Date) => {
+  const testData = (nascimento?:Date) => {
     const cutoff = new Date();
     let data = new Date();
     
@@ -87,8 +87,8 @@ function Subscription(): JSX.Element {
           .required('O e-mail é obrigatório'),
         nascimento: Yup
           .date()
-          .transform(transformType)
-          .test("nascimento", "Você deve ser maior de 18 anos", testType)
+          .transform(transformData)
+          .test("nascimento", "Você deve ser maior de 18 anos", testData)
           .required('Informe a sua data de nascimento'),
       });
 
@@ -126,7 +126,7 @@ function Subscription(): JSX.Element {
       <Link to="/">
         <img className="logo" src={logoImg} alt="Fantasy"/>
       </Link>
-      <h1>Fantasy</h1>
+      <h1>YouFantasy</h1>
       <Form id="subscription-form" ref={formRef} onSubmit={handleSubmit}>
         <Input name="name" placeholder="Seu primeiro nome*" />
         <Input name="email" placeholder="Seu melhor e-mail*" />
