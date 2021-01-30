@@ -5,6 +5,10 @@ html, body {
     background: #6F0101;
 }
 
+body {
+    overflow: hidden;
+}
+
 .page-main {
     width: 100vw;
     height: 100vh;

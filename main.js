@@ -3,6 +3,8 @@ const path = require('path');
 
 const app = express();
 
+const route = express.Router({ strict: true });
+
 const port = 21085;
 
 app.use(express.static(path.join(__dirname, '..', '..', 'www')));
@@ -16,8 +18,10 @@ const redirectionHttps = function (req, res, next) {
   }
 };
 
-app.get('/*', redirectionHttps, function (req, res) {
-  res.sendFile(path.join(__dirname, '..', '..', 'www', 'index.html'));
-});
+route.get('', redirectionHttps, (req, res) => res.sendFile(path.join(__dirname, '..', '..', 'www', 'main.html')));
+route.get('/*', redirectionHttps, (req, res) => res.sendFile(path.join(__dirname, '..', '..', 'www', 'main.html')));
+
+
+app.use(route);
 
 app.listen(port);
