@@ -5,10 +5,6 @@ html, body {
     background: #6F0101;
 }
 
-body {
-    overflow: hidden;
-}
-
 .page-main {
     width: 100vw;
     height: 100vh;
@@ -73,6 +69,10 @@ body {
 }
 
 @media (min-width: 1000px) {
+    body {
+        overflow: hidden;
+    }
+    
     .main main {
         width: 70%;
     }
