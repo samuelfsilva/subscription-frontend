@@ -81,7 +81,10 @@ function Subscription(): JSX.Element {
   const handleSubmit: SubmitHandler<FormData> = async data => {
     try {
       const schema = Yup.object().shape({
-        name: Yup.string().required('O nome é obrigatório'),
+        name: Yup.string()
+          .strict(true)
+          .trim('O nome não pode começar ou acabar com espaço')
+          .required('O nome é obrigatório'),
         email: Yup.string()
           .email('Informe um e-mail válido')
           .required('O e-mail é obrigatório'),
@@ -95,7 +98,7 @@ function Subscription(): JSX.Element {
       await schema.validate(data, {
         abortEarly: false,
       });
-
+      
       await api.post('subscribe', data);
 
       /* Dados gravados com sucesso */
