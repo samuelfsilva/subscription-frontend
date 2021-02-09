@@ -23,24 +23,50 @@
     line-height: 70px;
     letter-spacing: 0em;
     text-align: left;
-
-    margin-bottom: 51px;
+    margin-bottom: 20px;
 }
 
-#subscription-form {
-    width: 247px;
+#page-subscription #subscription-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 280px;
+    min-height: 250px;
+    border-radius: 15px;
+    background: #FFFFFF;
 }
 
-.button {
+#page-subscription #subscription-form > .input-block:nth-child(n+2),
+#page-subscription #subscription-form > .input-mask-block {
+    margin-top: 15px;
+}
+
+#page-subscription #subscription-form > .input-block > input,
+#page-subscription #subscription-form > .input-mask-block > input {
+    border: solid gray 1px;
+    border-radius: 10px;
+}
+
+#page-subscription #subscription-form > .input-block > input:focus,
+#page-subscription #subscription-form > .input-mask-block > input:focus {
+    outline: none;
+    border-bottom: 2px solid #6F0101;
+}
+
+#page-subscription .button {
     display: flex;
     justify-content: center;
     align-items: center;
     bottom: 0px;
+    margin-top: 20px;
 }
 
-.form-message {
+#page-subscription .form-message {
     opacity: 0;
     margin-top: 20px;
+    margin-bottom: 20px;
     width: 344px;
     height: 60px;
 
@@ -51,16 +77,16 @@
     justify-content: space-evenly;
 }
 
-.inscricao-enviada {
+#page-subscription .inscricao-enviada {
     animation: fade 6s;
 }
 
-.form-message > img {
+#page-subscription .form-message > img {
     width: 22.22px;
     height: 16px;
 }
 
-.form-message > span {
+#page-subscription .form-message > span {
     color: #416D2A;
     font-size: 16px;
 }
@@ -77,9 +103,17 @@
 @media (min-width: 1000px) {
     #page-subscription {
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         flex-direction: column;
+    }
+
+    #page-subscription .logo {
+        margin-top: 0px;
+    }
+
+    #page-subscription .form-message {
+        margin-bottom: 10px;
     }
 
     #page-subscription img {

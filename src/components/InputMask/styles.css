@@ -1,14 +1,14 @@
-.input-block {
+.input-mask-block {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.input-block + .input-block {
+.input-mask-block + .input-mask-block {
     margin-top: 18px;
 }
 
-.input-block input {
+.input-mask-block input {
     position: relative;
     width: 247px;
     height: 36px;
@@ -20,9 +20,9 @@
     padding-left: 15px;
 }
 
-.input-block span {
+.input-mask-block span {
     font-size: 12px;
     margin-left: 5px;
     margin-top: 2px;
-    color: #FFFFFF;
+    color: #6F0101;
 }

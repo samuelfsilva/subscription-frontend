@@ -29,7 +29,7 @@ const InputMask: React.FC<Props> = ({ name, ...rest }) => {
       }, [fieldName, registerField]);
 
     return (
-        <div className="input-block">
+        <div className="input-mask-block">
             <ReactInputMask 
                 id={name}
                 ref={inputRef}

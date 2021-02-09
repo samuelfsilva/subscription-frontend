@@ -58,7 +58,7 @@ function Subscription(): JSX.Element {
     cutoff.setFullYear(cutoff.getFullYear() - 18);
     
     if (nascimento)
-    data = nascimento;
+      data = nascimento;
     
     return data <= cutoff;
   }
@@ -91,7 +91,8 @@ function Subscription(): JSX.Element {
         nascimento: Yup
           .date()
           .transform(transformData)
-          .test("nascimento", "Você deve ser maior de 18 anos", testData)
+          .test('nascimento', 'Você deve ser maior de 18 anos', testData)
+          .max(new Date(), 'Não é possível incluir uma data futura')
           .required('Informe a sua data de nascimento'),
       });
 

@@ -4,10 +4,6 @@
     flex-direction: column;
 }
 
-.input-block + .input-block {
-    margin-top: 18px;
-}
-
 .input-block input {
     position: relative;
     width: 247px;
@@ -24,5 +20,5 @@
     font-size: 12px;
     margin-left: 5px;
     margin-top: 2px;
-    color: #FFFFFF;
+    color: #6F0101;
 }
