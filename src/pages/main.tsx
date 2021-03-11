@@ -10,7 +10,7 @@ import instagram from '../images/instagram.svg';
 
 const data = [
   "https://img5.cfcdn.club/f0/d2/f05cd114c5745b8d12b8a03d5b1b53d2_350x350.jpg",
-  "http://www.ciadesign.com.br/wp-content/uploads/2019/06/Stand-para-feiras.png",
+  "https://www.ciadesign.com.br/wp-content/uploads/2019/06/Stand-para-feiras.png",
   "https://www.clubelatino.com.br/academia-de-danca/imagens/professor-de-danca-tango.jpg"
 ];
 
