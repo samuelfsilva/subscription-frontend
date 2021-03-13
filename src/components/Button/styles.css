@@ -1,4 +1,4 @@
-button {
+.button button {
     position: relative;
     width: 247px;
     height: 40px;
@@ -11,6 +11,6 @@ button {
     transition-duration: 0.4s;
 }
 
-button:hover {
+.button button:hover {
     background: #ee090d;
 }
