@@ -3,7 +3,7 @@
 <h1 align="center">Hi 👋, I'm Samuel</h1>
 <h3 align="center">A passionate frontend developer from Brazil</h3>
 
-- 🔭 I’m currently working on [YouFantasy project hosted on](https://youfantasy.com.br/)
+- 🔭 I’m currently working on YouFantasy project hosted on [YouFantasy Site](https://youfantasy.com.br/)
 
 - Youfantasy instagram [https://www.instagram.com/youfantasy_site/](https://www.instagram.com/youfantasy_site/)
 
