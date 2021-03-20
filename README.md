@@ -3,9 +3,9 @@
 <h1 align="center">Hi 👋, I'm Samuel</h1>
 <h3 align="center">A passionate frontend developer from Brazil</h3>
 
-- This is YouFantasy project hosted on [YouFantasy Site](https://youfantasy.com.br/)
+- This is YouFantasy project hosted on <a href="https://youfantasy.com.br/" target="_blank">YouFantasy Site</a>
 
-- Youfantasy instagram [@youfantasy_site](https://www.instagram.com/youfantasy_site/)
+- Youfantasy instagram <a href="https://www.instagram.com/youfantasy_site/" target="_blank">@youfantasy_site</a>
 
 <p align="center">
     <img src="https://github.com/samuelfsilva/subscription-frontend/blob/main/examples/logo.png" alt="Logo" width="350" height="350"/>
