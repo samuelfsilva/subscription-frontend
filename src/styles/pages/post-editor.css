@@ -1,5 +1,47 @@
 .editor-container {
+    background: #ecf0f1;
+    color: #000;
+    height: fit-content;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-container > .jodit-workplace {
+    height: 400px;
+}
+
+.editor-container > #lbtitle {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.editor-container > #title {
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: 20px;
+}
+
+.editor-container > .controlls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 10px 10px 0px 0px;
+}
+
+.editor-container > .controlls > .button > .cancel-button,
+.editor-container > .controlls > .button > .send-button {
+    width: 150px;
+}
+
+.editor-container > .controlls > .button > .cancel-button {
     background: #FFF;
     color: #000;
-    height: 100vh;
+    border: 1px solid #000;
+    margin-right: 10px;
+}
+
+.editor-container > .controlls > .button > .cancel-button:hover {
+    background: gray;
 }
