@@ -1,7 +1,7 @@
 # YouFantasy Project
 
 <h1 align="center">Hi 👋, I'm Samuel</h1>
-<h3 align="center">A passionate frontend developer from Brazil</h3>
+<h3 align="center">A passionate javascript developer from Brazil</h3>
 
 - This is YouFantasy project hosted on <a href="https://youfantasy.com.br/" target="_blank">YouFantasy Site</a>
 
@@ -12,6 +12,8 @@
 </p>
 
 The YouFantasy project is designed to be a social network focused on adult content. Which brings information, curiosities and relationships between users.
+
+<a href="https://github.com/samuelfsilva/subscription-backend" target="_blank">Backend</a>
 
 
 <h3 align="left">Screen:</h3>
